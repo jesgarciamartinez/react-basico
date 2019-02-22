@@ -1,10 +1,19 @@
-import React, {Component} from 'react';
+import React from 'react';
 import './App.css';
+import {BackgroundImage, Section, Text} from './components';
 
-class App extends Component {
-  render() {
-    return <div>Esto es un div generado con React</div>;
-  }
+function App() {
+  return (
+    <Section>
+      <BackgroundImage>
+        <Text>
+          Transformamos organizaciones apoyadas en principios Agile, basándonos
+          en disciplinas digitales. (Diseño UX, DevOps arquitectura y Desarrollo
+          de Software)
+        </Text>
+      </BackgroundImage>
+    </Section>
+  );
 }
 
 export default App;
