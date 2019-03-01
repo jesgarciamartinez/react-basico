@@ -28,8 +28,8 @@ class MoreLessButtons extends React.Component {
 
     return (
       <div style={moreLessButtonsStyle}>
-        <input type="button" value="+" onChange={this.callUpFunction} />
-        <input type="button" value="-" onChange={this.callDownFunction} />
+        <input type="button" value="+" onClick={this.callUpFunction} />
+        <input type="button" value="-" onClick={this.callDownFunction} />
       </div>
     );
   }
