@@ -12,6 +12,10 @@
   margin-top: 8px;
 }
 
+.text {
+  margin: 0;
+}
+
 .mediaObject:not(.vertical) .text {
   margin-left: 8px;
 }

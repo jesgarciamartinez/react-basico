@@ -1,10 +1,11 @@
 import React from 'react';
 import './MediaObject.css';
+import Text from '../Text';
 
 const MediaObject = ({imgSrc, text, vertical = false}) => (
   <div className={`mediaObject${vertical ? ' vertical' : ''}`}>
     <img src={imgSrc} />
-    <span className="text">{text}</span>
+    <Text.Regular className="text" children={text} />
   </div>
 );
 
