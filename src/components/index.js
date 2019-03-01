@@ -6,3 +6,4 @@ export {default as Link} from './Link';
 export {default as MediaObject} from './MediaObject/MediaObject';
 export {default as Section} from './Section';
 export {default as Text} from './Text';
+export {default as MoreLessButtons} from './MoreLessButtons';
