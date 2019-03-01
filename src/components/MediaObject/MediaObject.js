@@ -2,9 +2,9 @@ import React from 'react';
 import './MediaObject.css';
 
 const MediaObject = ({imgSrc, text, vertical = false}) => (
-  <div className={vertical && 'vertical'}>
+  <div className={`mediaObject${vertical ? ' vertical' : ''}`}>
     <img src={imgSrc} />
-    <span>{text}</span>
+    <span className="text">{text}</span>
   </div>
 );
 
