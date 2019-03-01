@@ -1,0 +1,48 @@
+.job-offer-card {
+  display: flex;
+  justify-content: center;
+  align-items: left;
+  flex-flow: column wrap;
+  max-width: 10rem;
+  padding: 0.5rem;
+  background-color: #f6f6f6;
+}
+
+.job-offer-card-visited {
+  background-color: #eeeeee;
+}
+
+.job-offer-card-city {
+  font-size: 1.3rem;
+  color: #5d6871;
+  border-bottom: 4px solid #f18933;
+  margin-bottom: 2rem;
+}
+
+span {
+  /* display: block; */
+}
+
+.job-offer-card-capacity {
+  font-size: 1.65rem;
+  color: #e28c47;
+}
+
+.job-offer-card-description {
+  font-size: 1.25rem;
+  color: #e28c47;
+}
+
+.job-offer-card-show-offer {
+  background-color: #555555;
+  transition: background-color 0.3s ease;
+  color: #ffffff;
+  font-size: 1rem;
+  padding: 0.5rem 2rem;
+  margin: 1rem 0;
+  outline: none;
+  cursor: pointer;
+}
+.job-offer-card-show-offer:hover {
+  background-color: #333333;
+}

@@ -4,6 +4,10 @@ import PropTypes from 'prop-types';
 class JobOfferCard extends React.Component {
   state = {visited: false};
 
+  visitedClass = {
+    backgroundColor: 'red',
+  };
+
   static propTypes = {
     city: PropTypes.string,
     capacity: PropTypes.string,
@@ -11,15 +15,28 @@ class JobOfferCard extends React.Component {
     link: PropTypes.string,
   };
 
+  setVisited = () => {
+    // window.open(this.props.link);
+    this.setState({visited: true});
+  };
+
   render() {
-    const {city, capacity, description, link} = this.props;
+    const {city, capacity, description} = this.props;
 
     return (
-      <div>
-        <h3>{city}</h3>
-        <span>{capacity}</span>
-        <span>{description}</span>
-        <a href={link}>{'Ver Oferta'}</a>
+      <div
+        className={`job-offer-card ${this.state.visited &&
+          'job-offer-card-visited'}`}
+      >
+        <span className={'job-offer-card-city'}>{city}</span>
+        <span className={'job-offer-card-capacity'}>{capacity}</span>
+        <span className={'job-offer-card-description'}>{description}</span>
+        <button
+          className={'job-offer-card-show-offer'}
+          onClick={this.setVisited}
+        >
+          {'Ver Oferta'}
+        </button>
       </div>
     );
   }
