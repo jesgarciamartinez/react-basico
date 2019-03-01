@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-class MoreLessButtons extends React.Component {
+class MoreLessButtonsCore extends React.Component {
   static propTypes = {
     upFunction: PropTypes.func,
     downFunction: PropTypes.func,
+    vertical: PropTypes.bool,
   };
 
   callUpFunction = () => {
@@ -20,10 +21,16 @@ class MoreLessButtons extends React.Component {
   };
 
   render() {
+    const {vertical} = this.props;
+
     const moreLessButtonsStyle = {
-      display: 'grid',
-      width: '20px',
-      height: '40px',
+      borderStyle: 'solid',
+      borderWidth: '1px',
+      display: 'flex',
+      justifyContent: 'flex-start',
+      flexDirection: vertical ? 'column' : 'row',
+      width: vertical ? '20px' : '40px',
+      height: vertical ? '40px' : '20px',
     };
 
     return (
@@ -34,5 +41,15 @@ class MoreLessButtons extends React.Component {
     );
   }
 }
+
+const MoreLessButtons = {
+  vertical: props => {
+    return <MoreLessButtonsCore {...props} vertical={true} />;
+  },
+
+  horizontal: props => {
+    return <MoreLessButtonsCore {...props} vertical={false} />;
+  },
+};
 
 export default MoreLessButtons;
