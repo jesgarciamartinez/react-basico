@@ -25,7 +25,7 @@ const regularStyle = {
   fontSize: '1em',
 };
 
-const textFactory = type => ({style, children}) => {
+const textFactory = type => ({style, children, className}) => {
   const Tag = {
     title: 'h1',
     subTitle: 'h3',
@@ -38,17 +38,15 @@ const textFactory = type => ({style, children}) => {
     regular: regularStyle,
   }[type];
 
-  return (
-    <Tag
-      style={{
-        ...commonsStyle,
-        ...customStyle,
-        ...style,
-      }}
-    >
-      {children}
-    </Tag>
-  );
+  const props = {
+    className,
+    style: {
+      ...commonsStyle,
+      ...customStyle,
+      ...style,
+    },
+  };
+  return <Tag {...props}>{children}</Tag>;
 };
 
 const Text = {
