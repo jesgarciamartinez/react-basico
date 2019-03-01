@@ -1,14 +1,15 @@
 import React from 'react';
 import './App.css';
-import {BackgroundImage, Section, Text, MediaObject} from './components';
+import {Navbar, MediaObject} from './components';
 
 function App() {
   return (
-    <MediaObject
-      imgSrc="http://via.placeholder.com/300"
-      text="hello"
-      vertical
+    <Navbar
+      children={
+        <MediaObject imgSrc="http://via.placeholder.com/300" text="hello" />
+      }
     />
+
     // <Section>
     //   <BackgroundImage>
     //     <Text>
