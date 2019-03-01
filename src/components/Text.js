@@ -1,10 +1,5 @@
 import React from 'react';
-
-// Fuentes de la web de Kairos, extraídas con SnappySnippet
-// font: normal normal 400 normal 40px / 56px Oswald, sans-serif;
-// font: normal normal 400 normal 24px / 26.4px Roboto, sans-serif;
-// font: normal normal 400 normal 16px / 22.4px Oswald, sans-serif;
-// font: normal normal 400 normal 13px / 18.2px Roboto, sans-serif;
+import PropTypes from 'prop-types';
 
 const commonsStyle = {
   fontFamily: 'Montserrat',
@@ -25,18 +20,22 @@ const regularStyle = {
   fontSize: '1em',
 };
 
-const textFactory = type => ({style, children, className}) => {
+const textFactory = type => ({bold, italic, style, children, className}) => {
   const Tag = {
     title: 'h1',
     subTitle: 'h3',
     regular: 'p',
+    span: 'span',
   }[type];
 
-  const customStyle = {
-    title: titleStyle,
-    subTitle: subtitleStyle,
-    regular: regularStyle,
-  }[type];
+  const customStyle =
+    {
+      title: titleStyle,
+      subTitle: subtitleStyle,
+    }[type] || regularStyle;
+
+  customStyle.fontWeight = bold ? '800' : '400';
+  customStyle.fontStyle = italic ? 'italic' : 'normal';
 
   const props = {
     className,
@@ -53,6 +52,15 @@ const Text = {
   Title: textFactory('title'),
   SubTitle: textFactory('subTitle'),
   Regular: textFactory('regular'),
+  Span: textFactory('span'),
+};
+
+Text.propTypes = {
+  children: PropTypes.object.isRequired,
+  className: PropTypes.instanceOf(React.className),
+  style: PropTypes.instanceOf(React.style),
+  bold: PropTypes.bool,
+  italic: PropTypes.bool,
 };
 
 export default Text;
