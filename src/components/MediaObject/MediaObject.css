@@ -1,3 +1,21 @@
+.mediaObject {
+  display: inline-block;
+  padding: 8px;
+  display: inline-flex;
+  align-items: center;
+}
+
 .vertical {
-  color: red;
+  flex-direction: column;
+}
+.vertical .text {
+  margin-top: 8px;
+}
+
+.text {
+  margin: 0;
+}
+
+.mediaObject:not(.vertical) .text {
+  margin-left: 8px;
 }
