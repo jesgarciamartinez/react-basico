@@ -3,10 +3,10 @@ import './MediaObject.css';
 import Text from '../Text';
 import propTypes from 'prop-types';
 
-const MediaObject = ({imgSrc, text, vertical = false, ...props}) => (
+const MediaObject = ({imgSrc, width, text, vertical = false, ...props}) => (
   <div className={`mediaObject${vertical ? ' vertical' : ''}`} {...props}>
-    <img src={imgSrc} />
-    <Text.Regular className="text" children={text} />
+    <img width={width} src={imgSrc} alt={text} />
+    <Text.Regular bold className="text" children={text} />
   </div>
 );
 
