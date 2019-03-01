@@ -21,22 +21,22 @@ const subtitleStyle = {
 };
 
 const regularStyle = {
-  color: '#000',
+  color: '#999999',
   fontSize: '1em',
 };
 
 const textFactory = type => ({style, children}) => {
-  const Tag =
-    {
-      title: 'h1',
-      subTitle: 'h3',
-    }[type] || 'p';
+  const Tag = {
+    title: 'h1',
+    subTitle: 'h3',
+    regular: 'p',
+  }[type];
 
-  const customStyle =
-    {
-      title: titleStyle,
-      subTitle: subtitleStyle,
-    }[type] || regularStyle;
+  const customStyle = {
+    title: titleStyle,
+    subTitle: subtitleStyle,
+    regular: regularStyle,
+  }[type];
 
   return (
     <Tag
