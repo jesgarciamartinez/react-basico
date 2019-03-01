@@ -1,14 +1,21 @@
 import React from 'react';
 import './App.css';
-import {BackgroundImage, Section, Text, MediaObject} from './components';
+import {Navbar, MediaObject, BackgroundImage} from './components';
 
 function App() {
   return (
-    <MediaObject
-      imgSrc="http://via.placeholder.com/300"
-      text="hello"
-      vertical
-    />
+    <>
+      <Navbar
+        children={
+          <MediaObject
+            width="40px"
+            imgSrc="https://kds-k2-createtesthelper.firebaseapp.com/images/logo.svg"
+            text="K2 | Generador de test"
+          />
+        }
+      />
+      <BackgroundImage url="https://kds-k2-createtesthelper.firebaseapp.com/images/gplaypattern.png" />
+    </>
     // <Section>
     //   <BackgroundImage>
     //     <Text>
