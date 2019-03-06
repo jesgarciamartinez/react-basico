@@ -1,5 +1,5 @@
 import React from 'react'
-import './MediaObject.css'
+import styles from './MediaObject.module.css'
 import Text from '../Text'
 import propTypes from 'prop-types'
 
@@ -12,7 +12,12 @@ const MediaObject = ({
   ...props
 }) => (
   <div
-    className={`mediaObject${vertical ? ' vertical' : ''} ${className}`}
+    // className={`${styles.mediaObject}${
+    //   vertical ? ' mg5 pd4 vertical' : ''
+    // } ${className}`}
+    className={[styles.mediaObject, vertical && ' mg5 pd4 vertical', className]
+      .filter(Boolean)
+      .join('')}
     {...props}
   >
     <img width={width} src={imgSrc} alt={text} />
