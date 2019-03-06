@@ -15,7 +15,7 @@ import styled from 'styled-components'
 
    No es exactamente lo mismo porque styled-components no usa inline styles, sino que
    inserta un stylesheet con las reglas que le pasemos en el documento, y además está
-   preparado para recibier un tema por contexto.
+   preparado para recibir un tema por contexto.
 */
 const Section = styled.div({border: '2px solid orange'})
 
@@ -144,7 +144,7 @@ class Question extends React.Component {
     const {value: score} = e.target
     /* 2a forma de mantener la inmutabilidad:
        con el método updateAtIndex para crear un nuevo array,
-       y creando que copie todos los campos del objeto answer
+       y creando un objeto que copie todos los campos del objeto answer
        que queremos modificar, y sobreescriba score.
     */
     this.setState(prevState => {
