@@ -4,7 +4,11 @@
     "sourceType": "module"
   },
   "extends": ["react-app", "eslint-config-prettier"],
-  "rules": {},
+  "plugins": ["react-hooks"],
+  "rules": {
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn"
+  },
   "env": {
     "browser": true
   }
