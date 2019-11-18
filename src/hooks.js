@@ -205,6 +205,7 @@ const countReducer = (state, action) => {
 
 export const useCounterWithReducer = () => {
   const [state, dispatch] = useReducer(countReducer, initialState)
+
   const increment = () => dispatch({type: 'increment', payload: 3})
   const decrement = () => dispatch({type: 'decrement', payload: 3})
 
@@ -212,7 +213,7 @@ export const useCounterWithReducer = () => {
 }
 
 export function CounterExample() {
-  const {count, increment, decrement} = useCounter()
+  const {count, increment, decrement} = useCounterWithReducer()
 
   return (
     <div>
